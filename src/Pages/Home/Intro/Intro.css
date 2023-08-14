@@ -1,0 +1,18 @@
+.hero {
+  position: relative; 
+}
+
+.hero::before {    
+    content: "";
+    background-image: url('https://i.postimg.cc/50FTg089/18773907-5999842.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.25;
+}
+.text {
+  isolation: isolate;
+}
