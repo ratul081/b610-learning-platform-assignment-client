@@ -11,7 +11,6 @@ const Category = () => {
           key={courseData._id}
           courseData={courseData}
         ></CourseDetails>)
-        
       }
     </div>
   );
