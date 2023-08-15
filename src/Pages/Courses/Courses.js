@@ -12,9 +12,10 @@ const Courses = () => {
         <div className="w-full">
           <LeftSidebar></LeftSidebar>
         </div>
-          <Outlet></Outlet>
+        <Outlet></Outlet>
       </div>
     </div>
   );
 };
+
 export default Courses;
