@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BsGoogle,BsGithub } from "react-icons/bs";
 
 const LogIn = () => {
   return (
@@ -24,13 +25,21 @@ const LogIn = () => {
               <input type="password" name='password' placeholder="password" className="input input-bordered" />
               <label className="label">
                 <div className='space-y-2'>
-                <a className="label-text-alt link link-hover text-sm">Forgot password?</a>
+                <a href='jkwd' className="label-text-alt link link-hover text-sm">Forgot password?</a>
                 <p>Haven't register? <Link to='/register'>Register Now!!</Link></p>
                 </div>
               </label>
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
+            </div>
+            <div className='text-center text-lg'>
+              <p>Or</p>
+              <p>continue with</p>
+            </div>
+            <div className="btn-group btn-group-vertical space-y-3">
+              <button className="btn"><BsGoogle/>Google</button>
+              <button className="btn"><BsGithub/>Github</button>
             </div>
           </div>
         </div>

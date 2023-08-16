@@ -1,4 +1,4 @@
-import LeftSidebar from './LeftSidebar';
+import LeftSidebar from './LeftSideBar/LeftSidebar';
 import { Outlet } from 'react-router-dom';
 
 const Courses = () => {
