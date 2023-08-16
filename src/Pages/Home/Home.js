@@ -52,7 +52,7 @@ const Home = () => {
               <img
                 src="https://i.postimg.cc/fyj1Nnpm/My-project-3.png"
                 alt=""
-                srcset=""
+                
               />
             </div>
           </div>
@@ -81,7 +81,9 @@ const Home = () => {
         </div>
         <div className="flex flex-col lg:flex-row justify-between gap-6 mx-4 lg:mx-12">
           {Array.from({ length: 4 }).map((_, idx) => (
-            <div className="card bg-base-100 shadow-xl">
+            <div 
+            key={idx}
+            className="card bg-base-100 shadow-xl">
               <figure className="px-10 pt-10">
                 <img
                   src="https://i.postimg.cc/fyj1Nnpm/My-project-3.png"
@@ -105,7 +107,6 @@ const Home = () => {
           <img
             src="https://i.postimg.cc/sxTmM8hL/Untitled-1.png"
             alt=""
-            srcset=""
           />
         </div>
         <div className="lg:w-1/2 flex flex-col lg:justify-center text-center lg:text-start my-4 space-y-4">
