@@ -7,6 +7,9 @@ import FullCourseDetails from "../Pages/Courses/FullCourseDetails/FullCourseDeta
 import Category from "../Pages/Courses/Category/Category";
 import Courses from "../Pages/Courses/Courses";
 import Course from "../Pages/Courses/Course/Course";
+import PrivateRoute from "./Private Routes/PrivateRoute";
+import TermAndCondition from "../Pages/Others/TermAndCondition/TermAndCondition";
+import CheckOut from "../Pages/Share/CheckOut/CheckOut";
 
 
 export const routes = createBrowserRouter([
@@ -17,6 +20,7 @@ export const routes = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
+        loader: ()=> fetch('http://localhost:5000/home')
       },
       {
         path: '/login',
@@ -33,7 +37,7 @@ export const routes = createBrowserRouter([
           {
             path: '/courses',
             element: <Course></Course>,
-            loader: ()=> fetch("http://localhost:5000/courses/"),
+            loader: () => fetch("http://localhost:5000/courses/"),
           }
           ,
           {
@@ -45,9 +49,23 @@ export const routes = createBrowserRouter([
       },
       {
         path: '/courses/:id',
-        element: <FullCourseDetails></FullCourseDetails>,
+        element: <PrivateRoute><FullCourseDetails></FullCourseDetails></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+      },
+      {
+        path: '/terms_and_conditions',
+        element: <TermAndCondition></TermAndCondition>,
+      },
+      {
+        path: '/check_out/:id',
+        element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/check_out/${params.id}`)
       }
-    ]
+      ,
+      {
+        path: "*",
+        element: <div>Error</div>
+      }
+    ],
   }
 ])

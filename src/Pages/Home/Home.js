@@ -1,8 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import "./Intro.css";
 
 const Home = () => {
+  const coursesData = useLoaderData()
+  console.log("🚀 ~ file: Home.js:7 ~ Home ~ courseData:", coursesData)
+  
+  
+
   return (
     <>
       <div className="hero">
@@ -51,8 +56,8 @@ const Home = () => {
             <div>
               <img
                 src="https://i.postimg.cc/fyj1Nnpm/My-project-3.png"
-                alt=""
-                
+                alt="Your project"
+
               />
             </div>
           </div>
@@ -80,22 +85,22 @@ const Home = () => {
           </div>
         </div>
         <div className="flex flex-col lg:flex-row justify-between gap-6 mx-4 lg:mx-12">
-          {Array.from({ length: 4 }).map((_, idx) => (
-            <div 
-            key={idx}
-            className="card bg-base-100 shadow-xl">
+          {coursesData.map((course) => (
+            <div
+              key={course._id}
+              className="card bg-base-100 shadow-xl">
               <figure className="px-10 pt-10">
                 <img
-                  src="https://i.postimg.cc/fyj1Nnpm/My-project-3.png"
-                  alt="Shoes"
+                  src={course.image_url}
                   className="rounded-xl"
+                  alt=""
                 />
               </figure>
               <div className="card-body items-center text-center">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <h2 className="card-title">{course.title}</h2>
                 <div className="card-actions">
-                  <button className="btn btn-primary">Buy Now</button>
+                  <Link to={`/check_out/${course._id}`} className="btn btn-primary normal-case">Buy Now</Link>
+                  <Link to={`/courses/${course._id}`}  className="btn btn-primary normal-case">See more</Link>
                 </div>
               </div>
             </div>
@@ -106,7 +111,7 @@ const Home = () => {
         <div className="">
           <img
             src="https://i.postimg.cc/sxTmM8hL/Untitled-1.png"
-            alt=""
+            alt="Your"
           />
         </div>
         <div className="lg:w-1/2 flex flex-col lg:justify-center text-center lg:text-start my-4 space-y-4">

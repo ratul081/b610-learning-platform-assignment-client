@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider';
 
 const Header = () => {
@@ -7,10 +7,10 @@ const Header = () => {
 
   const handleLogOut = () => {
     logOut()
-    .then(() => {
+      .then(() => {
         console.log('logout success');
       })
-    .catch(err => { console.error(err) })
+      .catch(err => { console.error(err) })
   }
 
   return (
@@ -21,7 +21,7 @@ const Header = () => {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
           </label>
           <ul tabIndex={0} className="menu menu-sm  dropdown-content mt-3 z-[1] p-4 shadow bg-base-100 rounded-box w-52 ">
-            <Link to='/'>Home</Link>
+            <NavLink to='/'>Home</NavLink>
             <Link to='/courses'>Courses</Link>
             <Link>FAQ</Link>
             <Link>Blog</Link>
@@ -32,11 +32,36 @@ const Header = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-2 md:text-xl text-sm lg:gap-24 md:gap-8 gap-3">
-          <Link to='/'>Home</Link>
-          <Link to='/courses'>Courses</Link>
-          <Link>FAQ</Link>
-          <Link>Blog</Link>
-          <Link to="/login">Login</Link>
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "text-orange-600" : ""
+            }
+            to='/'>Home</NavLink>
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "text-orange-600" : ""
+            } to='/courses'>Courses</NavLink>
+          <NavLink to='faq'
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "text-orange-600" : ""
+            }>FAQ</NavLink>
+          <NavLink to='/blog'
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "text-orange-600" : ""
+            }>Blog</NavLink>
+          {
+            user?.uid ? <>
+            <NavLink
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "text-orange-600" : ""
+            } to="/join_premium_plan">Gold plus</NavLink>
+            </> : <>
+            <NavLink
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "text-orange-600" : ""
+            } to="/login">Login</NavLink>
+            </>
+          }
         </ul>
       </div>
       <div className="navbar-end">
@@ -48,9 +73,6 @@ const Header = () => {
           {
             user?.uid ?
               <>
-                <p className='text-center m-2'>
-                  {user?.displayName}
-                </p>
                 <div className="dropdown dropdown-hover dropdown-end">
                   <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
@@ -58,6 +80,11 @@ const Header = () => {
                     </div>
                   </label>
                   <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                    <li>
+                      <p className='text-2xl font-bold'>
+                        {user?.displayName}
+                      </p>
+                    </li>
                     <li>
                       <Link className="justify-between">
                         Profile
