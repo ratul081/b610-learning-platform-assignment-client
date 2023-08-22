@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { BsGoogle, BsGithub } from "react-icons/bs";
-import { AuthContext } from '../../Context/AuthProvider';
+import { AuthContext } from '../../../Context/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 
 
 const LogIn = () => {
-  const { singIn, providerLogin } = useContext(AuthContext);
+  const { singIn, providerLogin, passwordReset } = useContext(AuthContext);
   const navigate = useNavigate()
   const location = useLocation()
   const from = location.state?.from?.pathname || '/'
@@ -38,7 +38,6 @@ const LogIn = () => {
         setError(error.message)
       })
   }
-
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col">
@@ -62,7 +61,7 @@ const LogIn = () => {
                 <input type="password" name='password' placeholder="password" className="input input-bordered" />
                 <label className="label">
                   <div className='space-y-2'>
-                    <a href='cool' className="label-text-alt link link-hover text-sm">Forgot password?</a>
+                    <Link to='/password_reset' className="label-text-alt link link-hover text-sm">Forgot password?</Link>
                     <p>Haven't register? <Link to='/register'>Register Now!!</Link></p>
                   </div>
                 </label>

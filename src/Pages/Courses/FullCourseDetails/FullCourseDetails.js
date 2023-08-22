@@ -16,20 +16,20 @@ const FullCourseDetails = () => {
 });
 
   return (
-    <div ref={pdfContent} >
+    <div ref={pdfContent} className='text-justify' >
       <div class="relative">
         <div class="absolute right-10 text-4xl ">
           <button onClick={generatePDF}><BsFillPrinterFill/></button>
         </div>
       </div>
       <div className='mt-24'>
-      <h1 className='text-5xl font-bold m-12'>{title}</h1>
-        <div className='flex justify-evenly'>
-          <div className='w-2/5 space-y-4'>
+      <h1 className='text-5xl font-bold ms-12'>{title}</h1>
+        <div className='grid m-12 grid-cols-3'>
+          <div className='w-2/3 m-12 space-y-4 col-span-2'>
             <p className='text-xl'>{overview}</p>
             <div className='space-x-6'>
-              <Link to={`/check_out/${_id}`} className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg normal-case">Enrol Now</Link>
-              <Link className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg normal-case">Join Free seminar</Link>
+              <Link to={`/check_out/${_id}`} className="btn btn-xs sm:btn-sm md:btn-md normal-case">Enrol Now</Link>
+              <Link className="btn btn-xs sm:btn-sm md:btn-md normal-case">Join Free seminar</Link>
             </div>
             <div className="grid grid-cols-5">
               <p><span className='font-semibold'>Rating:</span> {rating.number}</p>
@@ -37,13 +37,13 @@ const FullCourseDetails = () => {
               <p><span className='font-semibold'>Total enrolled:</span> {total_students}</p>
             </div>
           </div>
-          <div className='w-2/6 p-12'>
+          <div className=''>
             <img className='rounded-lg' src={image_url} alt="" srcSet="" />
           </div>
         </div>
         <div className="space-y-6 m-12">
-          <p className="text-5xl font-semibold ">Course Overview</p>
-          <p className="text-lg">{details}</p>
+          <p className="text-5xl mb-12 font-semibold">Course Overview</p>
+          <p className="text-lg ms-12">{details}</p>
         </div>
         <div className="text-center my-24 space-y-6">
           <p className="text-5xl font-bold">Admission Is Going on</p>

@@ -23,9 +23,9 @@ const Header = () => {
           <ul tabIndex={0} className="menu menu-sm  dropdown-content mt-3 z-[1] p-4 shadow bg-base-100 rounded-box w-52 ">
             <NavLink to='/'>Home</NavLink>
             <Link to='/courses'>Courses</Link>
-            <Link>FAQ</Link>
-            <Link>Blog</Link>
-            <Link>Login</Link>
+            <Link to='/faq'>FAQ</Link>
+            <Link to='/blog'>Blog</Link>
+            <Link to='/login'>Login</Link>
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-xl">Home edu</Link>
@@ -41,7 +41,7 @@ const Header = () => {
             className={({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "text-orange-600" : ""
             } to='/courses'>Courses</NavLink>
-          <NavLink to='faq'
+          <NavLink to='/faq'
             className={({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "text-orange-600" : ""
             }>FAQ</NavLink>
@@ -69,7 +69,6 @@ const Header = () => {
           <button>
             <input type="checkbox" className="toggle" />
           </button>
-
           {
             user?.uid ?
               <>
@@ -103,7 +102,6 @@ const Header = () => {
                 <Link to='/register' className='btn normal-case btn-md' >Register</Link>
               </>
           }
-
         </div>
       </div>
     </div>

@@ -36,8 +36,7 @@ const CheckOut = () => {
                     <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
                   </div>
                 </div>
-                <p className='text-lg font-semibold'>Calender</p>
-                <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                
               </div>
             </div>
           </div>
@@ -49,7 +48,7 @@ const CheckOut = () => {
               <img className='rounded w-24 h-16 object-fill' src={addedCourse?.image_url} alt="" />
               <div className='mx-6'>
                 <p className='text-xl font-semibold'>{addedCourse.title}</p>
-                <p>{addedCourse.total_students}</p>
+                <p>Done by {addedCourse.total_students} students</p>
               </div>
             </div>
           </div>
@@ -62,6 +61,7 @@ const CheckOut = () => {
               <p>Shipping</p>
               <p>$0</p>
             </div>
+            <div className="divider"></div>
             <div className='flex justify-between' >
               <p>Total</p>
               <p>$0</p>

@@ -1,15 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
-import Main from "../Layout/Main/Main";
-import Home from "../Pages/Home/Home";
-import LogIn from "../Pages/LogIn/LogIn";
-import Register from "../Register/Register";
-import FullCourseDetails from "../Pages/Courses/FullCourseDetails/FullCourseDetails";
-import Category from "../Pages/Courses/Category/Category";
-import Courses from "../Pages/Courses/Courses";
-import Course from "../Pages/Courses/Course/Course";
-import PrivateRoute from "./Private Routes/PrivateRoute";
-import TermAndCondition from "../Pages/Others/TermAndCondition/TermAndCondition";
-import CheckOut from "../Pages/Share/CheckOut/CheckOut";
+import Main from "../../Layout/Main/Main";
+import Home from "../../Pages/Home/Home";
+import LogIn from "../../Pages/LogIn/LogIn/LogIn";
+import Register from "../../Pages/LogIn/Register/Register";
+import FullCourseDetails from "../../Pages/Courses/FullCourseDetails/FullCourseDetails";
+import Category from "../../Pages/Courses/Category/Category";
+import Courses from "../../Pages/Courses/Courses/Courses";
+import Course from "../../Pages/Courses/Course/Course";
+import PrivateRoute from "../Private Routes/PrivateRoute";
+import TermAndCondition from "../../Pages/Others/TermAndCondition/TermAndCondition";
+import CheckOut from "../../Pages/Share/CheckOut/CheckOut";
+import ErrorPage from "../../Pages/Share/ErrorPage/ErrorPage";
+import PasswordForget from "../../Pages/Others/PasswordForget/PasswordForget";
+import Blog from "../../Pages/Others/Blog/Blog";
 
 
 export const routes = createBrowserRouter([
@@ -20,7 +23,7 @@ export const routes = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: ()=> fetch('http://localhost:5000/home')
+        loader: () => fetch('http://localhost:5000/home')
       },
       {
         path: '/login',
@@ -63,8 +66,17 @@ export const routes = createBrowserRouter([
       }
       ,
       {
+        path:'/password_reset',
+        element: <PasswordForget></PasswordForget>
+      },
+      {
+        path:'/blog',
+        element: <Blog></Blog>
+      }
+      ,
+      {
         path: "*",
-        element: <div>Error</div>
+        element: <ErrorPage></ErrorPage>
       }
     ],
   }
