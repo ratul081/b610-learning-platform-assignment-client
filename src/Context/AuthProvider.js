@@ -6,9 +6,11 @@ import app from '../Firebase/Firebase.init';
 export const AuthContext = createContext()
 const auth = getAuth(app)
 
-
+export const ThemeContext = createContext()
 
 const AuthProvider = ({ children }) => {
+
+  const [theme, setTheme] = useState(false)
 
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true)
@@ -54,6 +56,7 @@ const AuthProvider = ({ children }) => {
       unSubscribe()
     }
   }, [])
+  console.log(theme);
 
   const authInfo = {
     user,
@@ -64,12 +67,19 @@ const AuthProvider = ({ children }) => {
     loading,
     updateUserProfile,
     verifyEmail,
-    passwordReset
+    passwordReset,
+
+  }
+  const data = {
+    setTheme,
+    theme
   }
   return (
-    <AuthContext.Provider value={authInfo}>
-      {children}
-    </AuthContext.Provider>
+    <ThemeContext.Provider value={data}>
+      <AuthContext.Provider value={authInfo}>
+        {children}
+      </AuthContext.Provider>
+    </ThemeContext.Provider>
   );
 };
 

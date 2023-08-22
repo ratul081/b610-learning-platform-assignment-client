@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { AuthContext } from '../../../Context/AuthProvider';
+import { AuthContext, ThemeContext } from '../../../Context/AuthProvider';
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext)
-
+  const {setTheme} =useContext(ThemeContext)
   const handleLogOut = () => {
     logOut()
       .then(() => {
@@ -13,6 +13,9 @@ const Header = () => {
       .catch(err => { console.error(err) })
   }
 
+  const handleThemeToggle=()=>{
+    setTheme((current) => !current);
+  }
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -67,7 +70,7 @@ const Header = () => {
       <div className="navbar-end">
         <div className="flex gap-2">
           <button>
-            <input type="checkbox" className="toggle" />
+            <input onClick={handleThemeToggle} type="checkbox" className="toggle" />
           </button>
           {
             user?.uid ?
