@@ -4,7 +4,7 @@ import { AuthContext, ThemeContext } from '../../../Context/AuthProvider';
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext)
-  const {setTheme} =useContext(ThemeContext)
+  const { setTheme } = useContext(ThemeContext)
   const handleLogOut = () => {
     logOut()
       .then(() => {
@@ -13,7 +13,7 @@ const Header = () => {
       .catch(err => { console.error(err) })
   }
 
-  const handleThemeToggle=()=>{
+  const handleThemeToggle = () => {
     setTheme((current) => !current);
   }
   return (
@@ -31,7 +31,9 @@ const Header = () => {
             <Link to='/login'>Login</Link>
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case text-xl">Home edu</Link>
+        <Link to="/" className="btn btn-ghost normal-case text-3xl">
+          <img className='w-14 h-14' src="https://i.postimg.cc/rwGvRDWm/Colorful-and-Cute-Kindergarten-Logo-removebg-preview.png" alt="" srcset="" />
+          <span className='mb-2'>Triad</span></Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-2 md:text-xl text-sm lg:gap-24 md:gap-8 gap-3">
@@ -54,15 +56,15 @@ const Header = () => {
             }>Blog</NavLink>
           {
             user?.uid ? <>
-            <NavLink
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "text-orange-600" : ""
-            } to="/join_premium_plan">Gold plus</NavLink>
+              <NavLink
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "text-orange-600" : ""
+                } to="/join_premium_plan">Gold plus</NavLink>
             </> : <>
-            <NavLink
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "text-orange-600" : ""
-            } to="/login">Login</NavLink>
+              <NavLink
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "text-orange-600" : ""
+                } to="/login">Login</NavLink>
             </>
           }
         </ul>

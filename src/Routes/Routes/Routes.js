@@ -13,6 +13,7 @@ import CheckOut from "../../Pages/Share/CheckOut/CheckOut";
 import ErrorPage from "../../Pages/Share/ErrorPage/ErrorPage";
 import PasswordForget from "../../Pages/Others/PasswordForget/PasswordForget";
 import Blog from "../../Pages/Others/Blog/Blog";
+import FAQ from "../../Pages/Others/FAQ/FAQ";
 
 
 export const routes = createBrowserRouter([
@@ -66,14 +67,17 @@ export const routes = createBrowserRouter([
       }
       ,
       {
-        path:'/password_reset',
+        path: '/password_reset',
         element: <PasswordForget></PasswordForget>
       },
       {
-        path:'/blog',
+        path: '/blog',
         element: <Blog></Blog>
-      }
-      ,
+      },
+      {
+        path: '/faq',
+        element: <FAQ></FAQ>
+      },
       {
         path: "*",
         element: <ErrorPage></ErrorPage>
