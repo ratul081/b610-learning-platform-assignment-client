@@ -29,6 +29,9 @@ const Header = () => {
             <Link to='/faq'>FAQ</Link>
             <Link to='/blog'>Blog</Link>
             <Link to='/login'>Login</Link>
+            <button>
+              <input onClick={handleThemeToggle} type="checkbox" className="toggle" />
+            </button>
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-3xl">
@@ -72,7 +75,7 @@ const Header = () => {
       <div className="navbar-end">
         <div className="flex gap-2">
           <button>
-            <input onClick={handleThemeToggle} type="checkbox" className="toggle" />
+            <input onClick={handleThemeToggle} type="checkbox" className="toggle lg:block hidden" />
           </button>
           {
             user?.uid ?

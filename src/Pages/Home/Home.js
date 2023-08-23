@@ -19,10 +19,10 @@ const Home = () => {
             </div>
             <div className="lg:space-y-6 space-y-2">
               <p className="text-sm lg:text-2xl">
-                With a vision to turn manpower into assets, Triad Institute is ready to enhance your learning experience with skilled mentors and updated curriculum. Pick your desired course from more than 30 trendy options.
+                With a vision to turn manpower into assets, Home Edu Institute is ready to enhance your learning experience with skilled mentors and updated curriculum. Pick your desired course from more than 30 trendy options.
               </p>
               <div className="lg:text-xl text-lg space-x-5 lg:space-x-8">
-                <Link className="btn btn-success">Success</Link>
+                <Link className="btn btn-success normal-case">Enrol Now</Link>
                 <Link
                   to="/courses"
                   className="uno-underline hover:underline font-semibold">
@@ -30,7 +30,7 @@ const Home = () => {
                 </Link>
               </div>
               <div>
-                <div className="card card-side bg-base-100 shadow-xl mt-4">
+                <div className="card card-side bg-base-100 shadow-xl mt-8">
                   <img
                     className="lg:w-3/12 w-4/12"
                     src="https://i.postimg.cc/gJ3MJXqZ/business-person-taking-an-ok-pose-svgrepo-com.png"
@@ -38,7 +38,6 @@ const Home = () => {
                   />
                   <div className="card-body lg:text-lg text-sm py-4">
                     The bright presence of our students in the marketplace inspires us, motivates us to engage more people with our vision to make a better future. During the last 14 years, hundreds of thousands people learned and grew their expertise with us. Bringing economic stability to their own life, many students created job opportunities for others. We always appreciate this wonderful journey of our keen learners.
-                    <div className="card-actions justify-end"></div>
                   </div>
                 </div>
               </div>
@@ -105,7 +104,7 @@ const Home = () => {
         <div className="lg:w-1/2 flex flex-col lg:justify-center text-center lg:text-start my-4 space-y-4">
           <div className="text-3xl">Best platform to grow</div>
           <div className="text-sm lg:text-lg">
-            Triad and its students share a lifetime bond. We strengthen our bond with you by providing lifelong support that helps you overcome any problem in your career path even after completing your course. Our expert support team ensures 24 hours service to all of our students. The personalized feedback that you receive from us, helps you grow, every day.
+            Home Edu and its students share a lifetime bond. We strengthen our bond with you by providing lifelong support that helps you overcome any problem in your career path even after completing your course. Our expert support team ensures 24 hours service to all of our students. The personalized feedback that you receive from us, helps you grow, every day.
           </div>
           <div className="m-2">
             <Link className="btn btn-success">learn more</Link>
