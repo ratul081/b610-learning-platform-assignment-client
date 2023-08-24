@@ -4,7 +4,7 @@ import  CourseDetails from '../CourseDetails/CourseDetails'
 const Category = () => {
   const coursesData =useLoaderData();
   return (
-    <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center mx-12 mb-12'>
+    <div className='lg:w-3/4 mx-4 grid md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center mb-12'>
       {
         coursesData.map(courseData => <CourseDetails
           key={courseData._id}

@@ -18,12 +18,12 @@ const Footer = () => {
       <div className='flex lg:flex-row flex-col justify-center items-center space-y-6  lg:justify-around text-lg lg:text-xl my-6'>
         <p>Lorem ipsum, dolor sit amet odio </p>
         <div className='text-white flex space-x-6 lg:text-3xl text-2xl'>
-          <Link><BsFacebook /></Link> 
-          <Link><BsTwitter /></Link> 
-          <Link><BsInstagram /></Link> 
+          <Link><BsFacebook /></Link>
+          <Link><BsTwitter /></Link>
+          <Link><BsInstagram /></Link>
         </div>
         <div className='flex text-center space-x-6 text-sm'>
-          <p>Teams & Condition</p>
+          <Link to='/terms_and_conditions'>Teams & Condition</Link>
           <p>Privacy Policy</p>
         </div>
       </div>

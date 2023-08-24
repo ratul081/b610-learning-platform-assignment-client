@@ -17,8 +17,8 @@ const FullCourseDetails = () => {
 
   return (
     <div ref={pdfContent} className='text-justify' >
-      <div class="relative">
-        <div class="absolute right-10 text-4xl ">
+      <div className="relative">
+        <div className="absolute right-10 text-4xl ">
           <button onClick={generatePDF}><BsFillPrinterFill/></button>
         </div>
       </div>

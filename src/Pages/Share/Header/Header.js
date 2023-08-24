@@ -35,7 +35,7 @@ const Header = () => {
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-3xl">
-          <img className='w-14 h-14' src="https://i.postimg.cc/rwGvRDWm/Colorful-and-Cute-Kindergarten-Logo-removebg-preview.png" alt="" srcset="" />
+          <img className='w-14 h-14' src="https://i.postimg.cc/rwGvRDWm/Colorful-and-Cute-Kindergarten-Logo-removebg-preview.png" alt="" srcSet="" />
           <span className='mb-2'>Triad</span></Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -62,12 +62,12 @@ const Header = () => {
               <NavLink
                 className={({ isActive, isPending }) =>
                   isPending ? "pending" : isActive ? "text-orange-600" : ""
-                } to="/join_premium_plan">Gold plus</NavLink>
+                } to="/check_out/:id">Gold plus</NavLink>
             </> : <>
               <NavLink
                 className={({ isActive, isPending }) =>
                   isPending ? "pending" : isActive ? "text-orange-600" : ""
-                } to="/login">Login</NavLink>
+                } to="/check_out/:id">Get premium acces</NavLink>
             </>
           }
         </ul>
@@ -93,7 +93,7 @@ const Header = () => {
                       </p>
                     </li>
                     <li>
-                      <Link className="justify-between">
+                      <Link to='/profile' className="justify-between">
                         Profile
                         <span className="badge">New</span>
                       </Link>
@@ -106,8 +106,8 @@ const Header = () => {
               </>
               :
               <>
-                <Link to='/login' className='btn normal-case btn-md' >Login</Link>
-                <Link to='/register' className='btn normal-case btn-md' >Register</Link>
+                <Link to='/login' className='btn normal-case btn-md'>Login</Link>
+                <Link to='/register' className='btn normal-case btn-md'>Register</Link>
               </>
           }
         </div>

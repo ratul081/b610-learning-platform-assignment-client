@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../../Context/AuthProvider';
 
 const CheckOut = () => {
+  const { user } = useContext(AuthContext)
   const addedCourse = useLoaderData()
   console.log("🚀 ~ file: CheckOut.js:6 ~ CheckOut ~ addedCourse:", addedCourse)
   return (
@@ -36,7 +38,7 @@ const CheckOut = () => {
                     <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
                   </div>
                 </div>
-                
+
               </div>
             </div>
           </div>
@@ -45,10 +47,42 @@ const CheckOut = () => {
           <div className='space-y-6 my-12'>
             <p className='text-3xl font-bold'>Order Summary</p>
             <div className='flex'>
-              <img className='rounded w-24 h-16 object-fill' src={addedCourse?.image_url} alt="" />
+              <div>
+                <img className='rounded w-24 h-16 object-fill' src={
+                  addedCourse._id ? `
+                ${addedCourse?.image_url}
+              ` : "https://i.postimg.cc/prcHy63H/istockphoto-500508876-612x612.jpg"
+                } alt="" />
+              </div>
               <div className='mx-6'>
-                <p className='text-xl font-semibold'>{addedCourse.title}</p>
-                <p>Done by {addedCourse.total_students} students</p>
+                <p className='text-xl font-semibold'>
+                  <span className={addedCourse._id ? '' : "hidden"}>
+                    {
+                      user?.uid ? `${addedCourse.title}` : "VIP Membership"
+                    }
+                  </span> 
+                  <span className={!addedCourse._id ? '' : "hidden"}>
+                    {
+                      addedCourse._id ? `${addedCourse.title}`
+                        :
+                        "VIP Membership"
+                    }
+                  </span> 
+                </p>
+                <p>Done by 
+                  <span className={addedCourse._id ? '' : "hidden"}>
+                    {
+                      user?.uid ? ` ${addedCourse.total_students} ` : " 800+ "
+                    }
+                  </span>
+                  <span className={!addedCourse._id ? '' : "hidden"}>
+                    {
+                      addedCourse._id ? ` ${addedCourse.total_students} `
+                        :
+                        " 800+ "
+                    }
+                  </span> 
+                  students</p>
               </div>
             </div>
           </div>

@@ -14,6 +14,7 @@ import ErrorPage from "../../Pages/Share/ErrorPage/ErrorPage";
 import PasswordForget from "../../Pages/Others/PasswordForget/PasswordForget";
 import Blog from "../../Pages/Others/Blog/Blog";
 import FAQ from "../../Pages/Others/FAQ/FAQ";
+import Profile from "../../Pages/Profile/Profile";
 
 
 export const routes = createBrowserRouter([
@@ -64,12 +65,17 @@ export const routes = createBrowserRouter([
         path: '/check_out/:id',
         element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/check_out/${params.id}`)
-      }
+      } 
       ,
       {
         path: '/password_reset',
         element: <PasswordForget></PasswordForget>
       },
+      {
+        path: '/profile',
+        element: <PrivateRoute><Profile></Profile></PrivateRoute> ,
+      }
+      ,
       {
         path: '/blog',
         element: <Blog></Blog>

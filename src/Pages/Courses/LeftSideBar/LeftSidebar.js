@@ -10,8 +10,7 @@ const LeftSidebar = () => {
       .then(data => setCategories(data))
   }, [])
   return (
-    <div>
-      <div className='mt-8 lg:mt-12 space-y-2 lg:space-y-6'>
+      <div className=' mt-8 lg:mt-12 space-y-2 lg:space-y-6'>
         {
           categories.map(category =>
             <div key={category.id}>
@@ -24,7 +23,7 @@ const LeftSidebar = () => {
           )
         }
       </div>
-    </div >
+    
   );
 };
 
