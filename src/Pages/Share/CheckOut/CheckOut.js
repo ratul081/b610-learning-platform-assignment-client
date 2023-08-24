@@ -6,11 +6,11 @@ const CheckOut = () => {
   console.log("🚀 ~ file: CheckOut.js:6 ~ CheckOut ~ addedCourse:", addedCourse)
   return (
     <div>
-      <div className=" grid grid-cols-3 m-24">
-        <div className='col-span-2'>
+      <div className="lg:grid grid-cols-3 m-12 lg:m-24">
+        <div className='lg:col-span-2'>
           <div className="space-y-6">
             <p className='text-3xl font-bold'>Delivery Information</p>
-            <div className="grid grid-cols-2 gap-16 m-24">
+            <div className="lg:grid grid-cols-2 gap-16 lg:m-24">
               <div className='space-y-2'>
                 <p className='text-lg font-semibold'>Name</p>
                 <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
@@ -42,7 +42,7 @@ const CheckOut = () => {
           </div>
         </div>
         <div>
-          <div className='space-y-6'>
+          <div className='space-y-6 my-12'>
             <p className='text-3xl font-bold'>Order Summary</p>
             <div className='flex'>
               <img className='rounded w-24 h-16 object-fill' src={addedCourse?.image_url} alt="" />
