@@ -16,7 +16,11 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true)
 
 
-  const providerLogin = (provider) => {
+  const googleProviderLogin = (provider) => {
+    setLoading(true)
+    return signInWithPopup(auth, provider)
+  }
+  const githubProviderLogin = (provider) => {
     setLoading(true)
     return signInWithPopup(auth, provider)
   }
@@ -48,7 +52,6 @@ const AuthProvider = ({ children }) => {
   }
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log('state change,', currentUser);
       setUser(currentUser)
       setLoading(false)
     })
@@ -56,11 +59,11 @@ const AuthProvider = ({ children }) => {
       unSubscribe()
     }
   }, [])
-  console.log(theme);
 
   const authInfo = {
     user,
-    providerLogin,
+    googleProviderLogin,
+    githubProviderLogin,
     createUser,
     singIn,
     logOut,
@@ -68,7 +71,6 @@ const AuthProvider = ({ children }) => {
     updateUserProfile,
     verifyEmail,
     passwordReset,
-
   }
   const data = {
     setTheme,

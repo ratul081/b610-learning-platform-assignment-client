@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext, ThemeContext } from '../../../Context/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext)
@@ -8,9 +9,11 @@ const Header = () => {
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        console.log('logout success');
+        toast.success('Logout success');
       })
-      .catch(err => { console.error(err) })
+      .catch(err => { 
+        toast.error("Could not log out please wait!!")
+        console.error(err) })
   }
 
   const handleThemeToggle = () => {

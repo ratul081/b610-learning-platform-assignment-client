@@ -1,18 +1,19 @@
-import React, { useContext, useState } from 'react';
-import { AuthContext } from '../../../Context/AuthProvider';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { toast } from 'react-hot-toast';
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../../../Context/AuthProvider";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 const Register = () => {
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [accepted, setAccepted] = useState(false);
-  const { createUser, updateUserProfile, verifyEmail } = useContext(AuthContext);
+  const { createUser, updateUserProfile, verifyEmail } =
+    useContext(AuthContext);
 
-  const navigate = useNavigate()
-  const location = useLocation()
-  const from = location.state?.from?.pathname || '/'
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
@@ -21,43 +22,41 @@ const Register = () => {
     const password = form.password.value;
 
     createUser(email, password)
-      .then(result => {
+      .then((result) => {
         const user = result.user;
-        console.log(user);
-        setError('');
+        setError("");
         form.reset();
         handleUpdateUserProfile(name, photoURL);
         handleEmailVerification();
-        toast.success('Please verify your email address.')
+        toast.success("Please verify your email address.");
         navigate(from, { replace: true });
       })
-      .catch(e => {
-        console.error(e);
-        setError(e.message);
+      .catch((error) => {
+        toast.error(error.message);
+        setError(error.message);
       });
-  }
+  };
 
   const handleUpdateUserProfile = (name, photoURL) => {
     const profile = {
       displayName: name,
-      photoURL: photoURL
-    }
+      photoURL: photoURL,
+    };
 
     updateUserProfile(profile)
-      .then(() => { })
-      .catch(error => console.error(error));
-  }
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
 
   const handleEmailVerification = () => {
     verifyEmail()
-      .then(() => { })
-      .catch(error => console.error(error));
-  }
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
 
-  const handleAccepted = event => {
-    setAccepted(event.target.checked)
-  }
-
+  const handleAccepted = (event) => {
+    setAccepted(event.target.checked);
+  };
 
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -72,40 +71,65 @@ const Register = () => {
                 <label className="label">
                   <span className="label-text text-lg">Name</span>
                 </label>
-                <input type="text" name='name' placeholder="Enter your Full name" className="input input-bordered" />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your Full name"
+                  className="input input-bordered"
+                />
               </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-lg">Email</span>
                 </label>
-                <input type="name" name='e_mail' placeholder="Enter your email" className="input input-bordered" />
+                <input
+                  type="name"
+                  name="e_mail"
+                  placeholder="Enter your email"
+                  className="input input-bordered"
+                />
               </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-lg">Password</span>
                 </label>
-                <input type="password" name='password' placeholder="password" className="input input-bordered" />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="password"
+                  className="input input-bordered"
+                />
               </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-lg">Photo URL</span>
                 </label>
-                <input type="text" name='photoURL' placeholder="Enter your photo URL" className="input input-bordered" />
+                <input
+                  type="text"
+                  name="photoURL"
+                  placeholder="Enter your photo URL"
+                  className="input input-bordered"
+                />
               </div>
-              <div className='form-control my-2'>
+              <div className="form-control my-2">
                 <label className="label cursor-pointer space-x-2">
-                  <input onClick={handleAccepted} type="checkbox" className="checkbox" />
-                  <p>Accept
-                    <Link to='/terms_and_conditions'> terms & conditions</Link>
+                  <input
+                    onClick={handleAccepted}
+                    type="checkbox"
+                    className="checkbox"
+                  />
+                  <p>
+                    Accept
+                    <Link to="/terms_and_conditions"> terms & conditions</Link>
                   </p>
                 </label>
               </div>
               <div className="form-control mt-3">
-                <button disabled={!accepted} className="btn btn-primary">Register</button>
+                <button disabled={!accepted} className="btn btn-primary">
+                  Register
+                </button>
               </div>
-              <p className='m-3 text-white'>
-                {error}
-              </p>
+              <p className="m-3 text-white">{error}</p>
             </form>
           </div>
         </div>

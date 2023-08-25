@@ -4,10 +4,6 @@ import "./Intro.css";
 
 const Home = () => {
   const coursesData = useLoaderData()
-  console.log("🚀 ~ file: Home.js:7 ~ Home ~ courseData:", coursesData)
-
-
-
   return (
     <>
       <div className="hero">
