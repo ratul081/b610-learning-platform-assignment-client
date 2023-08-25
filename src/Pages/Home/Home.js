@@ -22,7 +22,7 @@ const Home = () => {
                 With a vision to turn manpower into assets, Home Edu Institute is ready to enhance your learning experience with skilled mentors and updated curriculum. Pick your desired course from more than 30 trendy options.
               </p>
               <div className="lg:text-xl text-lg space-x-5 lg:space-x-8">
-                <Link className="btn btn-success normal-case">Enrol Now</Link>
+                <Link to="/courses" className="btn btn-success normal-case">Enrol Now</Link>
                 <Link
                   to="/courses"
                   className="uno-underline hover:underline font-semibold">
