@@ -61,8 +61,8 @@ const LogIn = () => {
                 <input type="password" name='password' placeholder="password" className="input input-bordered" />
                 <label className="label">
                   <div className='space-y-2'>
-                    <Link to='/password_reset' className="label-text-alt link link-hover text-sm">Forgot password?</Link>
-                    <p>Haven't register? <Link to='/register'>Register Now!!</Link></p>
+                    <Link to='/password_reset' className="label-text-alt link link-hover  text-violet-700 text-sm lg:text-lg">Forgot password?</Link>
+                    <p className='text-sm lg:text-lg'>Haven't register? <Link className='text-violet-700' to='/register'>Register Now!!</Link></p>
                   </div>
                 </label>
               </div>

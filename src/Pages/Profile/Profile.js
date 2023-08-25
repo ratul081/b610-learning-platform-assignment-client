@@ -20,7 +20,9 @@ const Profile = () => {
     <div className='min-h-screen m-12 space-y-6'>
       <p className='text-6xl'>Here your profile</p>
       <div className='grid place-items-center'>
-      <img className='rounded my-12' src={photoURL} alt="" />
+      <img className='rounded my-12' src={
+        photoURL? photoURL:'https://i.postimg.cc/kXm44xCH/1b96ad1f07feee81fa83c877a1e350ce.png'
+      } alt="" />
       <div className='text-2xl space-y-4'>
       <p>
         <span className='font-semibold'>Name:</span> {displayName}

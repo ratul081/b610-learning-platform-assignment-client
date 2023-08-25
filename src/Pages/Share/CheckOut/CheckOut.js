@@ -41,6 +41,9 @@ const CheckOut = () => {
 
               </div>
             </div>
+            <div className='ms-24'>
+              <button className='text-xl btn btn-success normal-case'>Save Now</button>
+            </div>
           </div>
         </div>
         <div>
@@ -60,16 +63,16 @@ const CheckOut = () => {
                     {
                       user?.uid ? `${addedCourse.title}` : "VIP Membership"
                     }
-                  </span> 
+                  </span>
                   <span className={!addedCourse._id ? '' : "hidden"}>
                     {
                       addedCourse._id ? `${addedCourse.title}`
                         :
                         "VIP Membership"
                     }
-                  </span> 
+                  </span>
                 </p>
-                <p>Done by 
+                <p>Done by
                   <span className={addedCourse._id ? '' : "hidden"}>
                     {
                       user?.uid ? ` ${addedCourse.total_students} ` : " 800+ "
@@ -81,7 +84,7 @@ const CheckOut = () => {
                         :
                         " 800+ "
                     }
-                  </span> 
+                  </span>
                   students</p>
               </div>
             </div>
@@ -102,6 +105,8 @@ const CheckOut = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div>
       </div>
     </div>
   );
