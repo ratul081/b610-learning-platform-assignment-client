@@ -25,7 +25,7 @@ export const routes = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/home')
+        loader: () => fetch('https://b610-learning-platform-assignment-server-ratul-44.vercel.app/home')
       },
       {
         path: '/login',
@@ -42,20 +42,20 @@ export const routes = createBrowserRouter([
           {
             path: '/courses',
             element: <Course></Course>,
-            loader: () => fetch("http://localhost:5000/courses/"),
+            loader: () => fetch("https://b610-learning-platform-assignment-server-ratul-44.vercel.app/courses/"),
           }
           ,
           {
             path: '/courses/category/:id',
             element: <Category></Category>,
-            loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`),
+            loader: ({ params }) => fetch(`https://b610-learning-platform-assignment-server-ratul-44.vercel.app/category/${params.id}`),
           },
         ]
       },
       {
         path: '/courses/:id',
         element: <PrivateRoute><FullCourseDetails></FullCourseDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+        loader: ({ params }) => fetch(`https://b610-learning-platform-assignment-server-ratul-44.vercel.app/courses/${params.id}`)
       },
       {
         path: '/terms_and_conditions',
@@ -64,8 +64,8 @@ export const routes = createBrowserRouter([
       {
         path: '/check_out/:id',
         element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/check_out/${params.id}`)
-      } 
+        loader: ({ params }) => fetch(`https://b610-learning-platform-assignment-server-ratul-44.vercel.app/check_out/${params.id}`)
+      }
       ,
       {
         path: '/password_reset',
@@ -73,7 +73,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: '/profile',
-        element: <PrivateRoute><Profile></Profile></PrivateRoute> ,
+        element: <PrivateRoute><Profile></Profile></PrivateRoute>,
       }
       ,
       {

@@ -83,7 +83,7 @@ const Header = () => {
                 <div className="dropdown dropdown-hover dropdown-end">
                   <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
-                      <img src={user?.photoURL? user?.photoURL:'https://i.postimg.cc/kXm44xCH/1b96ad1f07feee81fa83c877a1e350ce.png'} alt='' />
+                      <img src={(user?.photoURL)? (user?.photoURL):'https://i.postimg.cc/kXm44xCH/1b96ad1f07feee81fa83c877a1e350ce.png'} alt='' />
                     </div>
                   </label>
                   <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">

@@ -2,18 +2,18 @@ import React from "react";
 
 const FAQ = () => {
   return (
-    <div className="m-24 space-y-6">
-      <div className="text-5xl">Frequently Asked Questions</div>
-      <p className="text-xl ">
+    <div className="lg:m-24 m-8 space-y-6">
+      <div className="lg:text-5xl md:text-2xl text-xl">Frequently Asked Questions</div>
+      <p className="lg:text-xl md:text-lg text-sm">
         We understand that you have a lot of queries about the institution where
         you will take the first step in your career journey. <br /> Our expert
         quality team and admission department are always ready to answer all
         your questions. You <br /> can also find updated information about the
         course modules, seminars, and course fees on our website.
       </p>
-      <div className="m-20 grid grid-cols-2 gap-16">
+      <div className="lg:m-20 lg:grid grid-cols-2 gap-16">
         <div className="m-4 space-y-3 ">
-          <p className="text-3xl font-semibold text-red-500">Will you make us earn?</p>
+          <p className="lg:text-3xl text-xl  font-semibold text-red-500">Will you make us earn?</p>
           <p>
             No. We Don't. We will not make you earn, but we can make you capable
             of earning. Earning will depend entirely on your subject-specific
@@ -29,7 +29,7 @@ const FAQ = () => {
           </p>
         </div>
         <div className="m-4 space-y-3">
-          <p className="text-3xl font-semibold text-red-500">
+          <p className="lg:text-3xl text-xl font-semibold text-red-500">
             How do you conduct online classes? Do you only provide recorded
             classes?
           </p>
@@ -42,7 +42,7 @@ const FAQ = () => {
           </p>
         </div>
         <div className="m-4 space-y-3">
-          <p className="text-3xl font-semibold text-red-500">
+          <p className="lg:text-3xl text-xl font-semibold text-red-500">
             Can I work on online marketplaces only by taking courses at CIT?
           </p>
           <p>
@@ -55,7 +55,7 @@ const FAQ = () => {
           </p>
         </div>
         <div className="m-4 space-y-3">
-          <p className="text-3xl font-semibold text-red-500">
+          <p className="lg:text-3xl text-xl font-semibold text-red-500">
             What are the benefits of the offline course? Do you provide extra
             facilities?
           </p>
@@ -70,7 +70,7 @@ const FAQ = () => {
           </p>
         </div>
         <div className="m-4 space-y-3">
-          <p className="text-3xl font-semibold text-red-500">
+          <p className="lg:text-3xl text-xl font-semibold text-red-500">
             How to pay the course fee? Is it in one go or installments are
             available?
           </p>
@@ -81,7 +81,7 @@ const FAQ = () => {
           </p>
         </div>
         <div className="m-4 space-y-3">
-          <p className="text-3xl font-semibold text-red-500">
+          <p className="lg:text-3xl text-xl font-semibold text-red-500">
             Will you guarantee a job at the end of the course?
           </p>
           <p>
@@ -94,7 +94,7 @@ const FAQ = () => {
           </p>
         </div>
         <div className="m-4 space-y-3 ">
-          <p className="text-3xl font-semibold text-red-500">
+          <p className="lg:text-3xl text-xl font-semibold text-red-500">
             Will you guarantee a job at the end of the course?
           </p>
           <p>
@@ -107,7 +107,7 @@ const FAQ = () => {
           </p>
         </div>
         <div className="m-4 space-y-3 ">
-          <p className="text-3xl font-semibold text-red-500">
+          <p className="lg:text-3xl text-xl font-semibold text-red-500">
             How long will it take to become an expert?
           </p>
           <p>

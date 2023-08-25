@@ -28,8 +28,8 @@ const CheckOut = () => {
                 <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
                 <p className='text-lg font-semibold' >City</p>
                 <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
-                <div className='flex justify-evenly gap-4 w-3/4'>
-                  <div className=''>
+                <div className='lg:flex justify-evenly gap-4 w-3/4'>
+                  <div>
                     <p className='text-lg font-semibold'>ZIP</p>
                     <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
                   </div>
@@ -38,10 +38,9 @@ const CheckOut = () => {
                     <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
                   </div>
                 </div>
-
               </div>
             </div>
-            <div className='ms-24'>
+            <div className='lg:ms-24 ms-4'>
               <button className='text-xl btn btn-success normal-case'>Save Now</button>
             </div>
           </div>
@@ -51,13 +50,13 @@ const CheckOut = () => {
             <p className='text-3xl font-bold'>Order Summary</p>
             <div className='flex'>
               <div>
-                <img className='rounded w-24 h-16 object-fill' src={
+                <img className='rounded w-28 h-20 object-fill' src={
                   addedCourse._id ? `
                 ${addedCourse?.image_url}
               ` : "https://i.postimg.cc/prcHy63H/istockphoto-500508876-612x612.jpg"
                 } alt="" />
               </div>
-              <div className='mx-6'>
+              <div className='mx-6 grid place-items-center'>
                 <p className='text-xl font-semibold'>
                   <span className={addedCourse._id ? '' : "hidden"}>
                     {
